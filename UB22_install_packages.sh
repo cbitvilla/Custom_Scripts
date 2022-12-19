@@ -4,8 +4,8 @@
 if [ "$EUID" -ne 0 ]; then
   #echo "user is not root, do you wish to attempt to switch to root...\n"
   #sudo su -
-  echo -e "User is not root attempting to install packages as $USER\n"
-  echo -e "################################\n"
+  	echo -e "User is not root attempting to install packages as $USER\n"
+  	echo -e "################################\n"
 	echo -e "RUNNING SYSTEM UPDATE FOR UBUNTU 22.04...\n"
 	echo -e "################################\n"
 	sudo apt update && apt upgrade -y
