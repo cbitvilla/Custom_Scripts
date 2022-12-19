@@ -1,6 +1,11 @@
 #!/usr/bin/bash
-# Will need to add a way to detwemin if you are root or not
-# If you are NOT root, then change into root
+
+#The $EUID environment variable holds the current user's UID. Root's UID is 0
+if [ "$EUID" -ne 0 ]; then
+  echo "user is not root, will now attempt to switch to root...\n"
+  sudo su -
+fi
+
 echo -e "################################\n"
 echo -e "RUNNING SYSTEM UPDATE FOR UBUNTU 22.04...\n"
 echo -e "################################\n"
