@@ -44,7 +44,6 @@ sudo nala install -y docker-ce
 sudo systemctl enable docker
 docker --version
 sudo usermod -aG docker ${USER}
-su - ${USER}
 echo -e "\n"
 
 echo -e "################################\n"
@@ -63,3 +62,4 @@ sudo nala install -y zsh
 zsh --version
 sudo nala install -y git-core curl fonts-powerline
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+su - ${USER}
