@@ -6,6 +6,8 @@ echo -e "################################\n"
 sudo apt update && sudo apt upgrade -y
 echo -e "\n"
 
+sleep 1
+
 echo -e "################################\n"
 echo -e "INSTALLING NECESSARY PACKAGES...\n"
 echo -e "################################\n"
@@ -25,6 +27,8 @@ openssh-server \
 vim
 echo -e "\n"
 
+sleep 1
+
 echo -e "################################\n"
 echo "INSTALLING nala...\n"
 echo -e "################################\n"
@@ -32,6 +36,8 @@ sudo apt install -y nala
 sudo nala fetch
 sudo nala update
 echo -e "\n"
+
+sleep 1
 
 echo -e "################################\n"
 echo -e "INSTALLING DOCKER-CE..."
@@ -43,8 +49,10 @@ apt-cache policy docker-ce
 sudo nala install -y docker-ce
 sudo systemctl enable docker
 docker --version
-sudo usermod -aG docker ${USER}
+#sudo usermod -aG docker ${USER}
 echo -e "\n"
+
+sleep 1
 
 echo -e "################################\n"
 echo -e "INSTALLING DOCKER-COMPOSE 2.3.3...\n"
@@ -55,6 +63,8 @@ chmod +x ~/.docker/cli-plugins/docker-compose
 docker compose version
 echo -e "\n"
 
+sleep 1
+
 echo -e "################################\n"
 echo -e "INSTALLING ZSH & OH-MY-ZSH...\n"
 echo -e "################################\n"
@@ -62,4 +72,13 @@ sudo nala install -y zsh
 zsh --version
 sudo nala install -y git-core curl fonts-powerline
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-su - ${USER}
+
+sleep 1
+su - vnc
+sleep 1
+# sudo usermod -aG docker ${USER}
+# su - ${USER}
+
+sudo usermod -aG docker vnc
+sleep 1
+su - vnc
