@@ -7,6 +7,16 @@
 
 Uncomment and add the following (may subject to change)
 
+```
+# Static IP configuration:
+interface eth0
+static ip_address=192.168.17.5/24
+#static ip6_address=fd51:42f8:caae:d92e::ff/64
+static routers=192.168.17.1
+static domain_name_servers=192.168.17.1
+```
+
+Best to just reboot the server to make these changes up and running. 
 
 
 ## Installing the necessary tools/packages
@@ -15,7 +25,7 @@ Uncomment and add the following (may subject to change)
 
 `sudo apt upgrade -y`
 
-`sudo apt install openjdk-8-jre-headless`
+`sudo apt install openjdk-8-jre-headless -y`
 
 `sudo apt install rng-tools`
 
